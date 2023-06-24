@@ -1,0 +1,34 @@
+zakupy = []
+
+while True:
+    print("Co chcesz zrobić?")
+    print("1. Dodaj przedmiot do listy")
+    print("2. Usuń przedmiot z listy")
+    print("3. Wyświetl listę zakupów")
+    print("4. Zakończ program")
+
+    wybor = input("Twój wybór: ")
+
+    if wybor == "1":
+        przedmiot = input("Podaj nazwę przedmiotu: ")
+        zakupy.append(przedmiot)
+        print(f"Dodano {przedmiot} do listy zakupów.")
+    elif wybor == "2":
+        przedmiot = input("Podaj nazwę przedmiotu do usunięcia: ")
+        if przedmiot in zakupy:
+            zakupy.remove(przedmiot)
+            print(f"Usunięto {przedmiot} z listy zakupów.")
+        else:
+            print("Przedmiot nie istnieje na liście.")
+    elif wybor == "3":
+        if len(zakupy) == 0:
+            print("Lista zakupów jest pusta.")
+        else:
+            print("Lista zakupów:")
+            for i, przedmiot in enumerate(zakupy, start=1):
+                print(f"{i}. {przedmiot}")
+    elif wybor == "4":
+        print("Dziękujemy za skorzystanie z aplikacji.")
+        break
+    else:
+        print("Nieprawidłowy wybór. Spróbuj ponownie.")
